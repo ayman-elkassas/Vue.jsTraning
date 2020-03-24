@@ -1,0 +1,57 @@
+<div id="content">
+  <h3>Add new </h3>
+  <div class="card" style="width: 18rem;">
+    <form v-if="!submitted">
+      <div class="form-group">
+        <label>Blog Title</label>
+        <!--        Todo:v-model.lazy: after remove focus from input change occur-->
+        <input type="text" v-model.lazy="blog.title" class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <label>Content</label>
+        <textarea v-model.lazy="blog.content" class="form-control"></textarea>
+      </div>
+
+      <div id="checkboxes">
+        <label>Ninjas</label>
+        <input type="checkbox" value="Ninjas" v-model="blog.Categories">
+        <label>Wizards</label>
+        <input type="checkbox" value="Wizards" v-model="blog.Categories">
+        <label>Mario</label>
+        <input type="checkbox" value="Mario" v-model="blog.Categories">
+        <label>Cheese</label>
+        <input type="checkbox" value="Cheese" v-model="blog.Categories">
+      </div>
+
+      <label>Author</label>
+      <label>
+        <select v-model="blog.author">
+          <option v-for="author in authors">{{author}}</option>
+        </select>
+      </label>
+
+      <button class="btn-success" @click.prevent="post">Add Blog</button>
+
+    </form>
+
+    <p v-if="submitted">
+      Thanks for adding your post
+    </p>
+
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Blog Title : {{blog.title}}</h5>
+      <p class="card-text">Blog Content : {{blog.content}}</p>
+
+      <ul>
+        <li v-for="catergory in blog.Categories">{{catergory}}</li>
+      </ul>
+
+      <p>Author: {{blog.author}}</p>
+
+    </div>
+  </div>
+</div>

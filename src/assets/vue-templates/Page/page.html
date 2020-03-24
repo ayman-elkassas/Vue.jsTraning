@@ -1,0 +1,25 @@
+<div id="page">
+  <app-header :title="title" v-on:chTitle="upTitle($event)"></app-header>
+  <form-helper>
+
+    <p slot="title">With slot can add additional body to your component</p>
+    <p slot="text">With slot can add additional body to your component</p>
+
+  </form-helper>
+
+  <show-blog></show-blog>
+
+  <Input-Binding></Input-Binding>
+
+<!--  Dynamic component-->
+  <keep-alive>
+    <component v-bind:is="component"></component>
+  </keep-alive>
+  <button v-on:click="component ='form-one'">Show Form One</button>
+  <button v-on:click="component ='form-two'">Show Form Two</button>
+
+  <app-content  :list="listElements"></app-content>
+  <hr>
+  <app-content :list="listElements"></app-content>
+  <app-footer :title="title"></app-footer>
+</div>

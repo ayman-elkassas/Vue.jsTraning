@@ -1,0 +1,12 @@
+<div class="row">
+  <div v-for="obj in list" @click="show = validate " class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{obj.time}}</p>
+        <a href="#" class="btn btn-primary">{{obj.course}}</a>
+      </div>
+    </div>
+  </div>
+  <button @click="deleteCard">Delete Card</button>
+</div>

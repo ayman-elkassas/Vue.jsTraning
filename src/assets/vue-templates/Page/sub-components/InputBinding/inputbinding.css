@@ -1,0 +1,12 @@
+#content{
+  width: 200px;
+}
+
+#checkboxes input{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#checkboxes label{
+  display: inline-block;
+}
