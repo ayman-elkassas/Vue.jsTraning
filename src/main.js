@@ -9,17 +9,14 @@ import Page from './assets/vue-templates/Page/Page.vue';
 export const bus=new Vue();
 
 import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
+import Routes from './routes.js'
 //Todo:****************Import**********************
 
 // new Vue({
 //   el: '#app',
 //   render: h => h(App)
 // });
-
-new Vue({
-  el:'#page',
-  render:h=>h(Page)
-});
 
 //Todo:can render component once.
 // new Vue({
@@ -31,6 +28,14 @@ new Vue({
 
 //Todo:Use vue resource
 Vue.use(VueResource);
+
+//Todo:Use vue router
+Vue.use(VueRouter);
+const router=new VueRouter({
+  routes:Routes,
+  //Todo:to remove #/ from route link put mode
+  mode:'history'
+});
 
 //Todo:Custom Directives
 Vue.directive('rainbow',{
@@ -61,6 +66,13 @@ Vue.filter('to-upperCase',function (value) {
 
 Vue.filter('snippet',function (value) {
   return value.slice(0,100)+'...';
+});
+
+//Todo:Write your main object in bottom to read all vars
+new Vue({
+  el:'#page',
+  render:h=>h(Page),
+  router:router
 });
 
 

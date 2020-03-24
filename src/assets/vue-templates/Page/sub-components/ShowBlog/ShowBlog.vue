@@ -17,11 +17,25 @@
     methods:{
 
     },created () {
-		  this.$http.get('https://jsonplaceholder.typicode.com/posts')
+		  //Todo:Make Firebase Route
+      this.$http.get('https://vue-blog-228f1.firebaseio.com/posts.json')
         .then(function (data) {
-		    // console.log(data);
-          this.blogs=data.body.slice(0,10);
+          return data.json();
+        }).then(function (data) {
+          var blogsArray=[];
+          for(let key in data){
+            data[key].id=key;
+            blogsArray.push(data[key]);
+          }
+          this.blogs=blogsArray;
+          console.log(blogsArray);
       });
+
+		  // this.$http.get('https://jsonplaceholder.typicode.com/posts')
+      //   .then(function (data) {
+		  //   // console.log(data);
+      //     this.blogs=data.body.slice(0,10);
+      // });
     },
     computed:{
 		  //Todo:Replace this method with mixin

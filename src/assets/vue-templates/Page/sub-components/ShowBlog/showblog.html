@@ -4,7 +4,9 @@
   <input type="text" v-model="search" placeholder="search blogs"/>
 
   <div v-for="blog in filterBlogs" class="single-blog">
-    <h2 v-rainbow>{{blog.title | toUpper}}</h2>
-    <article>{{blog.body | snippet}}</article>
+    <router-link :to="'/blog/'+blog.id">
+      <h2 v-rainbow>{{blog.title | toUpper}}</h2>
+    </router-link>
+    <article>{{blog.content | snippet}}</article>
   </div>
 </div>

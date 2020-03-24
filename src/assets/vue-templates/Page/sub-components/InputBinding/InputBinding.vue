@@ -13,11 +13,19 @@
           author:''
         },
         authors:['The net ninja','The Angular Avenger','The Vue Vindicator'],
-        submitted:false
+        submitted:true
       }
     },
     methods:{
-		  post:function () {
+		  //Todo:Using Firebase Realtime
+      post:function () {
+        this.$http.post('https://vue-blog-228f1.firebaseio.com/posts.json',this.blog)
+          .then(function (data) {
+          console.log(data);
+          this.submitted=true
+        })
+      },
+		  post1:function () {
 		    this.$http.post('https://jsonplaceholder.typicode.com/posts',{
 		      title:this.blog.title,
           body:this.blog.content,

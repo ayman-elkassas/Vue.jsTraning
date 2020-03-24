@@ -1,0 +1,28 @@
+ul{
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+}
+li{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+nav{
+  background: #444;
+  padding: 14px 0;
+  margin-bottom: 40px;
+}
+
+.router-link-active{
+  background: #e0a800;
+  color: #fff;
+}

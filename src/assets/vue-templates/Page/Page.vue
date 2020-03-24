@@ -16,6 +16,10 @@
   import ShowBlog from "./sub-components/ShowBlog/ShowBlog.vue";
   import ListBlogs from "./sub-components/ListBlogs/ListBlogs.vue";
 
+  import NavBar from "./sub-components/NavBar/NavBar.vue";
+
+  //Todo://****************Import******************
+
 	export default {
 		name : "page",
     data:function () {
@@ -41,7 +45,8 @@
       'form-two':FormTwo,
       'Input-Binding':InputBinding,
       'show-blog':ShowBlog,
-      'list-blogs':ListBlogs
+      'list-blogs':ListBlogs,
+      'nav-bar':NavBar
     },
     methods:{
 		  //Todo:using with Event not with event bus
