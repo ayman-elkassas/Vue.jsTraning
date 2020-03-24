@@ -14,6 +14,7 @@
   import InputBinding from "./sub-components/InputBinding/InputBinding.vue";
 
   import ShowBlog from "./sub-components/ShowBlog/ShowBlog.vue";
+  import ListBlogs from "./sub-components/ListBlogs/ListBlogs.vue";
 
 	export default {
 		name : "page",
@@ -39,7 +40,8 @@
       'form-one':FormOne,
       'form-two':FormTwo,
       'Input-Binding':InputBinding,
-      'show-blog':ShowBlog
+      'show-blog':ShowBlog,
+      'list-blogs':ListBlogs
     },
     methods:{
 		  //Todo:using with Event not with event bus

@@ -1,0 +1,9 @@
+<div v-theme:column='wide' id="show-blogs">
+  <h3>List Blog Titles</h3>
+
+  <input type="text" v-model="search" placeholder="search blogs"/>
+
+  <div v-for="blog in filterBlogs" class="single-blog">
+    <h2 v-rainbow>{{blog.title | toUpper}}</h2>
+  </div>
+</div>
